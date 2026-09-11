@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nandha Kumar — Data Analyst Portfolio</title>
+<meta name="description" content="Nandha Kumar — Data Analyst portfolio. SQL, Power BI, Tableau dashboards and projects.">
+
+<!-- ============================================================
+  HOW TO EDIT THIS FILE (no coding experience needed)
+  Every spot you need to personalize is marked like this:
+      <!-- EDIT: ... -->
+  Search this file (Ctrl+F / Cmd+F) for the word EDIT and you'll
+  find every place to paste your links, photo, and text.
+============================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink: #101820;
+    --ink-2: #1a2530;
+    --ink-line: #2c3944;
+    --paper: #F6F4EF;
+    --paper-2: #EFEBE2;
+    --line: #D8D3C7;
+    --amber: #C98A2B;
+    --amber-bright: #E3A94B;
+    --teal: #3F6B63;
+    --slate: #5B6570;
+    --ink-text: #E8E5DC;
+    --ink-muted: #8C99A0;
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "Inter", -apple-system, Segoe UI, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+
+  .wrap{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  a{ color: var(--teal); }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position: sticky; top:0; z-index: 20;
+    background: rgba(246,244,239,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 24px;
+    max-width: 760px;
+  }
+  nav .brand{
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  nav .brand strong{ color: var(--amber); }
+  nav ul{
+    list-style:none; display:flex; gap: 22px; margin:0; padding:0;
+  }
+  nav a.navlink{
+    color: var(--slate);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  nav a.navlink:hover{ color: var(--ink); }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    background: var(--ink);
+    color: var(--ink-text);
+    padding: 90px 0 70px;
+  }
+  .terminal{
+    background: var(--ink-2);
+    border: 1px solid var(--ink-line);
+    border-radius: 6px;
+    padding: 22px 24px;
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--ink-muted);
+    max-width: 620px;
+  }
+  .terminal .dots{ display:flex; gap:6px; margin-bottom: 16px; }
+  .terminal .dots span{
+    width:9px; height:9px; border-radius:50%;
+    background: var(--ink-line);
+    display:inline-block;
+  }
+  .terminal .prompt::before{ content: "sql> "; color: var(--teal); }
+  #typed-query{ color: var(--amber-bright); white-space: pre-wrap; }
+  .cursor{
+    display:inline-block; width: 8px; height: 16px;
+    background: var(--amber-bright);
+    margin-left: 2px; vertical-align: -2px;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink{ 50%{ opacity: 0; } }
+
+  .hero-result{
+    margin-top: 28px;
+    max-width: 620px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .hero-result.show{ opacity: 1; transform: translateY(0); }
+
+  .hero-result .row{
+    display:flex; gap: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--ink-line);
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+  .hero-result .row span.k{ color: var(--ink-muted); width: 64px; flex-shrink:0; }
+  .hero-result .row span.v{ color: var(--ink-text); }
+
+  h1.hero-name{
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(34px, 5.5vw, 52px);
+    margin: 22px 0 6px;
+    color: #FFFFFF;
+  }
+  p.hero-role{
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--amber-bright);
+    margin: 0 0 18px;
+  }
+  p.hero-bio{
+    max-width: 520px;
+    color: var(--ink-muted);
+    font-size: 16px;
+    margin: 0 0 30px;
+  }
+  .hero-cta{ display:flex; gap: 14px; flex-wrap: wrap; }
+  .btn{
+    display:inline-block;
+    padding: 11px 20px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary{ background: var(--amber-bright); color: var(--ink); }
+  .btn-primary:hover{ background: #f0be79; }
+  .btn-outline{ border-color: var(--ink-line); color: var(--ink-text); }
+  .btn-outline:hover{ border-color: var(--ink-muted); }
+
+  /* ---------- SECTIONS (general) ---------- */
+  section{ padding: 64px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type{ border-bottom: none; }
+  .eyebrow-num{
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--amber);
+    margin: 0 0 10px;
+  }
+  h2{
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 28px;
+    margin: 0 0 22px;
+    color: var(--ink);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns: 120px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .about-photo{
+    width: 120px; height: 120px;
+    border-radius: 4px;
+    background: var(--paper-2) center/cover no-repeat;
+    border: 1px solid var(--line);
+  }
+  .about-text p{ margin: 0 0 14px; color: #333; max-width: 560px; }
+  @media (max-width: 520px){
+    .about-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- SKILLS (ledger table) ---------- */
+  .skill-row{
+    display:grid;
+    grid-template-columns: 160px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .skill-row:last-child{ border-bottom: 1px solid var(--line); }
+  .skill-row .label{
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--slate);
+  }
+  .skill-row .items{ color: #333; font-size: 15px; }
+  @media (max-width: 520px){
+    .skill-row{ grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .project{
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    background: #FFFEFB;
+  }
+  .project-top{
+    display:flex; justify-content: space-between; align-items: baseline;
+    gap: 12px; flex-wrap: wrap;
+  }
+  .project h3{
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0;
+    color: var(--ink);
+  }
+  .project .tag{
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    border-radius: 3px;
+    padding: 2px 7px;
+    white-space: nowrap;
+  }
+  .project p{ color: #444; margin: 10px 0 14px; font-size: 15px; }
+  .project .links{ display:flex; gap: 18px; font-size: 14px; }
+  .project .links a{ text-decoration: none; font-weight: 500; }
+  .project .links a:hover{ text-decoration: underline; }
+
+  /* ---------- JOURNEY (sequential timeline) ---------- */
+  .step{
+    display:grid;
+    grid-template-columns: 34px 1fr;
+    gap: 16px;
+    padding-bottom: 26px;
+    position: relative;
+  }
+  .step:not(:last-child)::before{
+    content:"";
+    position:absolute;
+    left: 16px; top: 26px; bottom: -2px;
+    width: 1px;
+    background: var(--line);
+  }
+  .step .num{
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--paper);
+    background: var(--ink);
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .step h4{ margin: 4px 0 4px; font-size: 15px; font-weight: 600; }
+  .step p{ margin: 0; color: var(--slate); font-size: 14px; }
+
+  /* ---------- CONTACT ---------- */
+  footer.contact{
+    background: var(--ink);
+    color: var(--ink-text);
+    padding: 64px 0 44px;
+  }
+  footer.contact h2{ color: #fff; }
+  footer.contact p{ color: var(--ink-muted); max-width: 480px; }
+  .contact-links{
+    display:flex; gap: 24px; flex-wrap: wrap;
+    margin-top: 22px;
+    font-family: var(--mono);
+    font-size: 14px;
+  }
+  .contact-links a{ color: var(--amber-bright); text-decoration: none; }
+  .contact-links a:hover{ text-decoration: underline; }
+  .fine{
+    margin-top: 46px;
+    color: #55606a;
+    font-size: 12px;
+    font-family: var(--mono);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <!-- EDIT: swap the initials if you like -->
+    <a class="brand" href="#top">NK<strong>.</strong></a>
+    <ul>
+      <li><a class="navlink" href="#about">About</a></li>
+      <li><a class="navlink" href="#skills">Skills</a></li>
+      <li><a class="navlink" href="#projects">Projects</a></li>
+      <li><a class="navlink" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="terminal">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="prompt"><span id="typed-query"></span><span class="cursor"></span></div>
+    </div>
+
+    <div class="hero-result" id="hero-result">
+      <div class="row"><span class="k">name</span><span class="v">Nandha Kumar</span></div>
+      <div class="row"><span class="k">from</span><span class="v">Medical Coding → Data Analytics</span></div>
+      <div class="row"><span class="k">exp</span><span class="v">~4 years in healthcare data, DHA-regulated</span></div>
+      <div class="row"><span class="k">stack</span><span class="v">SQL · Power BI · Tableau</span></div>
+
+      <h1 class="hero-name">Nandha Kumar</h1>
+      <p class="hero-role">Aspiring Data Analyst — SQL · Power BI · Tableau · Excel</p>
+      <p class="hero-bio">
+        Around four years spent reviewing and validating healthcare data in
+        high-compliance, DHA-regulated environments — now bringing that same
+        rigor to dashboards and analysis in SQL, Power BI, and Tableau.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projects">View projects</a>
+        <a class="btn btn-outline" href="Nandha_Kumar_Data_Analyst_Resume.pdf" target="_blank" rel="noopener">Download résumé</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="about">
+    <div class="wrap">
+      <p class="eyebrow-num">01</p>
+      <h2>About</h2>
+      <div class="about-grid">
+        <!-- EDIT: replace the URL below with a link to your photo.
+             Easiest way: upload a square photo into this same repo
+             (e.g. name it profile.jpg) and just put "profile.jpg" here. -->
+        <div class="about-photo" style="background-image:url('profile.jpg')"></div>
+        <div class="about-text">
+          <p>
+            I started in life sciences — a B.Sc in Zoology &amp; Biotechnology,
+            then a diploma in Medical Laboratory Technology — before spending
+            close to four years as a medical coder across three healthcare
+            organizations. That work meant reviewing large volumes of
+            patient data daily, staying compliant with DHA, HIPAA, and CMS
+            standards, and coordinating with physicians, billing teams, and
+            insurers to keep records accurate and claims moving.
+          </p>
+          <p>
+            That combination — comfort with detail, regulatory discipline,
+            and working across teams — is what I now bring to data
+            analytics. Since mid-2026 I've been building a structured path
+            through SQL, Power BI, and Tableau, with a hands-on project at
+            the end of each stage, collected below.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <p class="eyebrow-num">02</p>
+      <h2>Skills</h2>
+
+      <div class="skill-row">
+        <div class="label">SQL</div>
+        <div class="items">Joins, aggregations, window functions, subqueries, query optimization</div>
+      </div>
+      <div class="skill-row">
+        <div class="label">POWER BI</div>
+        <div class="items">Data modeling, DAX measures, interactive dashboards, Power Query</div>
+      </div>
+      <div class="skill-row">
+        <div class="label">TABLEAU</div>
+        <div class="items">Calculated fields, dashboard design, storytelling with data</div>
+      </div>
+      <div class="skill-row">
+        <div class="label">EXCEL</div>
+        <div class="items">Pivot tables, formulas, data cleaning and prep, charting</div>
+      </div>
+      <div class="skill-row">
+        <div class="label">DATA QUALITY</div>
+        <div class="items">Validation, reconciliation, and quality assurance on large data volumes</div>
+      </div>
+      <div class="skill-row">
+        <div class="label">COMPLIANCE</div>
+        <div class="items">DHA, HIPAA, and CMS regulatory standards in healthcare data handling</div>
+      </div>
+      <div class="skill-row">
+        <div class="label">LANGUAGES</div>
+        <div class="items">English (fluent) · Tamil (native) · Hindi &amp; Malayalam (working proficiency)</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <p class="eyebrow-num">03</p>
+      <h2>Projects</h2>
+
+      <div class="project">
+        <div class="project-top">
+          <h3>Hospital Revenue Cycle Management</h3>
+          <span class="tag">Power BI</span>
+        </div>
+        <p>Interactive Power BI dashboard analyzing hospital revenue cycle performance — claims submitted, denials, and collections — with DAX measures built to help stakeholders track reimbursement trends and pinpoint revenue leakage by department.</p>
+        <div class="links">
+          <!-- EDIT: add your published Power BI report link if you have one -->
+          <a href="#" target="_blank" rel="noopener">View live dashboard →</a>
+          <a href="https://github.com/nandha-kumar-git/Hospital-RCM-PBI" target="_blank" rel="noopener">View repository →</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <h3>NovaForge HR Analytics</h3>
+          <span class="tag">Power BI</span>
+        </div>
+        <p>Power BI dashboard tracking headcount, attrition, and workforce trends across departments, with dynamic filters and drill-through views so HR stakeholders can analyze attrition by tenure, department, and role.</p>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">View live dashboard →</a>
+          <a href="https://github.com/nandha-kumar-git/NovaForge-HR-PBI" target="_blank" rel="noopener">View repository →</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <h3>SkyGulf Airways Analytics</h3>
+          <span class="tag">Power BI</span>
+        </div>
+        <p>Power BI dashboard visualizing airline performance metrics — delays, routes, and booking volumes — with visual summaries built to surface on-time performance trends and high-traffic routes for operational insight.</p>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">View live dashboard →</a>
+          <a href="https://github.com/nandha-kumar-git/SkyGulf-Airways-PBI" target="_blank" rel="noopener">View repository →</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <h3>Hospital SQL Analysis</h3>
+          <span class="tag">SQL</span>
+        </div>
+        <p>SQL queries analyzing hospital operational data — patient volumes, admissions, and billing trends — using joins, aggregations, and filtering to extract insights supporting operational and financial reporting.</p>
+        <div class="links">
+          <a href="https://github.com/nandha-kumar-git/Hospital-SQL-Analysis" target="_blank" rel="noopener">View repository →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="wrap">
+      <p class="eyebrow-num">04</p>
+      <h2>My path so far</h2>
+
+      <div class="step">
+        <div class="num">1</div>
+        <div><h4>Life sciences education</h4><p>B.Sc in Advanced Zoology &amp; Biotechnology, alongside a diploma in Medical Laboratory Technology (2018–2021).</p></div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div><h4>Medical coder, AnnexMed</h4><p>Reviewed outpatient and inpatient records, assigned diagnostic codes, and served as single point of contact for the team lead — handling inventory tracking and workflow coordination (2022–2024).</p></div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div><h4>Multi-specialty denial coder, AGS Healthcare</h4><p>Analyzed denied claims across specialties, resolved denials against insurance guidelines, and took part in coding audits and QA activities (2024).</p></div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div><h4>Medical coder, NMC Specialty Hospital</h4><p>Currently assigning ICD-10-CM and CPT codes in a DHA-regulated environment in Dubai, coordinating with physicians to resolve documentation gaps and improve claim acceptance (March 2025–present).</p></div>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <div><h4>Certified Professional Coder (CPC)</h4><p>AAPC certification, alongside coursework in Excel, Power BI, and Tableau through Great Learning.</p></div>
+      </div>
+      <div class="step">
+        <div class="num">6</div>
+        <div><h4>Data analytics, self-taught</h4><p>Structured study since mid-2026: SQL, then Power BI, then Tableau — a hands-on project at the end of each stage.</p></div>
+      </div>
+      <div class="step">
+        <div class="num">7</div>
+        <div><h4>Building a portfolio</h4><p>Bringing four dashboards and a SQL project together to show the work, not just describe it.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow-num">05</p>
+    <h2>Get in touch</h2>
+    <p>I enjoy turning data into something people can actually use — reach out if you'd like to talk through any of the work above.</p>
+    <div class="contact-links">
+      <a href="mailto:nandhakumar6101@gmail.com">nandhakumar6101@gmail.com</a>
+      <a href="https://www.linkedin.com/in/nandha-kumar-b75535190" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/nandha-kumar-git" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <p class="fine">Built by Nandha Kumar</p>
+  </div>
+</footer>
+
+<script>
+  // Hero typing animation
+  const query = "SELECT name, role FROM analysts WHERE curiosity = true;";
+  const el = document.getElementById('typed-query');
+  const result = document.getElementById('hero-result');
+  let i = 0;
+
+  function type(){
+    if(i <= query.length){
+      el.textContent = query.slice(0, i);
+      i++;
+      setTimeout(type, 28);
+    } else {
+      setTimeout(() => result.classList.add('show'), 250);
+    }
+  }
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.textContent = query;
+    result.classList.add('show');
+  } else {
+    type();
+  }
+</script>
+
+</body>
+</html>
